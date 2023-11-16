@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/Button.dart';
+import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
   runApp(const App());
@@ -19,7 +20,7 @@ class App extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 80,
+                height: 70,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -44,7 +45,7 @@ class App extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 120,
+                height: 20,
               ),
               Text(
                 'Total Balance',
@@ -65,7 +66,7 @@ class App extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,7 +84,7 @@ class App extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 100,
+                height: 24,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -107,39 +108,33 @@ class App extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
-              Container(
-                decoration:  BoxDecoration(
-                  color: const Color(0xFF1F2123),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(20),
-                  ),
-                  child:  const Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            'Euro',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [Text('6 428'), Text('EUR')],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+              const CurrencyCard(
+                  name: "Euro",
+                  code: "EUR",
+                  amount: "6 428",
+                  icon: Icons.euro_rounded,
+                  isInverted: false,
+                  x: 0,
+                  y: -10),
+              const CurrencyCard(
+                name: "Bitcoin",
+                code: "BTC",
+                amount: "9 785",
+                icon: Icons.currency_bitcoin_rounded,
+                isInverted: true,
+                x: 0,
+                y: -50,
+              ),
+              const CurrencyCard(
+                name: "Dollar",
+                code: "USD",
+                amount: '428',
+                icon: Icons.attach_money_rounded,
+                isInverted: false,
+                x: 0,
+                y: -90,
               )
             ],
           ),
